@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link href="data:text/css;charset=utf-8,%0A%0A%0Aarticle%2C%0Aaside%2C%0Adetails%2C%0Afigcaption%2C%0Afigure%2C%0Afooter%2C%0Aheader%2C%0Ahgroup%2C%0Amain%2C%0Anav%2C%0Asection%2C%0Asummary%20%7B%0Adisplay%3A%20block%3B%0A%7D%0A%0Aaudio%2C%0Acanvas%2C%0Avideo%20%7B%0Adisplay%3A%20inline%2Dblock%3B%0A%7D%0A%0Aaudio%3Anot%28%5Bcontrols%5D%29%20%7B%0Adisplay%3A%20none%3B%0Aheight%3A%200%3B%0A%7D%0A%0A%5Bhidden%5D%2C%0Atemplate%20%7B%0Adisplay%3A%20none%3B%0A%7D%0A%0A%0Ahtml%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%20%0A%2Dms%2Dtext%2Dsize%2Dadjust%3A%20100%25%3B%20%0A%2Dwebkit%2Dtext%2Dsize%2Dadjust%3A%20100%25%3B%20%0A%7D%0A%0Abody%20%7B%0Amargin%3A%200%3B%0A%7D%0A%0A%0Aa%20%7B%0Abackground%3A%20transparent%3B%0A%7D%0A%0Aa%3Afocus%20%7B%0Aoutline%3A%20thin%20dotted%3B%0A%7D%0A%0Aa%3Aactive%2C%0Aa%3Ahover%20%7B%0Aoutline%3A%200%3B%0A%7D%0A%0A%0Ah1%20%7B%0Afont%2Dsize%3A%202em%3B%0Amargin%3A%200%2E67em%200%3B%0A%7D%0A%0Aabbr%5Btitle%5D%20%7B%0Aborder%2Dbottom%3A%201px%20dotted%3B%0A%7D%0A%0Ab%2C%0Astrong%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0A%0Adfn%20%7B%0Afont%2Dstyle%3A%20italic%3B%0A%7D%0A%0Ahr%20%7B%0A%2Dmoz%2Dbox%2Dsizing%3A%20content%2Dbox%3B%0Abox%2Dsizing%3A%20content%2Dbox%3B%0Aheight%3A%200%3B%0A%7D%0A%0Amark%20%7B%0Abackground%3A%20%23ff0%3B%0Acolor%3A%20%23000%3B%0A%7D%0A%0Acode%2C%0Akbd%2C%0Apre%2C%0Asamp%20%7B%0Afont%2Dfamily%3A%20monospace%2C%20serif%3B%0Afont%2Dsize%3A%201em%3B%0A%7D%0A%0Apre%20%7B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%0A%7D%0A%0Aq%20%7B%0Aquotes%3A%20%22%5C201C%22%20%22%5C201D%22%20%22%5C2018%22%20%22%5C2019%22%3B%0A%7D%0A%0Asmall%20%7B%0Afont%2Dsize%3A%2080%25%3B%0A%7D%0A%0Asub%2C%0Asup%20%7B%0Afont%2Dsize%3A%2075%25%3B%0Aline%2Dheight%3A%200%3B%0Aposition%3A%20relative%3B%0Avertical%2Dalign%3A%20baseline%3B%0A%7D%0Asup%20%7B%0Atop%3A%20%2D0%2E5em%3B%0A%7D%0Asub%20%7B%0Abottom%3A%20%2D0%2E25em%3B%0A%7D%0A%0A%0Aimg%20%7B%0Aborder%3A%200%3B%0A%7D%0A%0Asvg%3Anot%28%3Aroot%29%20%7B%0Aoverflow%3A%20hidden%3B%0A%7D%0A%0A%0Afigure%20%7B%0Amargin%3A%200%3B%0A%7D%0A%0A%0Afieldset%20%7B%0Aborder%3A%201px%20solid%20%23c0c0c0%3B%0Amargin%3A%200%202px%3B%0Apadding%3A%200%2E35em%200%2E625em%200%2E75em%3B%0A%7D%0A%0Alegend%20%7B%0Aborder%3A%200%3B%20%0Apadding%3A%200%3B%20%0A%7D%0A%0Abutton%2C%0Ainput%2C%0Aselect%2C%0Atextarea%20%7B%0Afont%2Dfamily%3A%20inherit%3B%20%0Afont%2Dsize%3A%20100%25%3B%20%0Amargin%3A%200%3B%20%0A%7D%0A%0Abutton%2C%0Ainput%20%7B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0A%0Abutton%2C%0Aselect%20%7B%0Atext%2Dtransform%3A%20none%3B%0A%7D%0A%0Abutton%2C%0Ahtml%20input%5Btype%3D%22button%22%5D%2C%20%0Ainput%5Btype%3D%22reset%22%5D%2C%0Ainput%5Btype%3D%22submit%22%5D%20%7B%0A%2Dwebkit%2Dappearance%3A%20button%3B%20%0Acursor%3A%20pointer%3B%20%0A%7D%0A%0Abutton%5Bdisabled%5D%2C%0Ahtml%20input%5Bdisabled%5D%20%7B%0Acursor%3A%20default%3B%0A%7D%0A%0Ainput%5Btype%3D%22checkbox%22%5D%2C%0Ainput%5Btype%3D%22radio%22%5D%20%7B%0Abox%2Dsizing%3A%20border%2Dbox%3B%20%0Apadding%3A%200%3B%20%0A%7D%0A%0Ainput%5Btype%3D%22search%22%5D%20%7B%0A%2Dwebkit%2Dappearance%3A%20textfield%3B%20%0A%2Dmoz%2Dbox%2Dsizing%3A%20content%2Dbox%3B%0A%2Dwebkit%2Dbox%2Dsizing%3A%20content%2Dbox%3B%20%0Abox%2Dsizing%3A%20content%2Dbox%3B%0A%7D%0A%0Ainput%5Btype%3D%22search%22%5D%3A%3A%2Dwebkit%2Dsearch%2Dcancel%2Dbutton%2C%0Ainput%5Btype%3D%22search%22%5D%3A%3A%2Dwebkit%2Dsearch%2Ddecoration%20%7B%0A%2Dwebkit%2Dappearance%3A%20none%3B%0A%7D%0A%0Abutton%3A%3A%2Dmoz%2Dfocus%2Dinner%2C%0Ainput%3A%3A%2Dmoz%2Dfocus%2Dinner%20%7B%0Aborder%3A%200%3B%0Apadding%3A%200%3B%0A%7D%0A%0Atextarea%20%7B%0Aoverflow%3A%20auto%3B%20%0Avertical%2Dalign%3A%20top%3B%20%0A%7D%0A%0A%0Atable%20%7B%0Aborder%2Dcollapse%3A%20collapse%3B%0Aborder%2Dspacing%3A%200%3B%0A%7D%0A%2Ego%2Dtop%20%7B%0Aposition%3A%20fixed%3B%0Abottom%3A%202em%3B%0Aright%3A%202em%3B%0Atext%2Ddecoration%3A%20none%3B%0Abackground%2Dcolor%3A%20%23E0E0E0%3B%0Afont%2Dsize%3A%2012px%3B%0Apadding%3A%201em%3B%0Adisplay%3A%20inline%3B%0A%7D%0A%0Ahtml%2Cbody%7B%20margin%3A%20auto%3B%0Apadding%2Dright%3A%201em%3B%0Apadding%2Dleft%3A%201em%3B%0Amax%2Dwidth%3A%2080%25%3B%20color%3Ablack%3B%7D%2A%3Anot%28%27%23mkdbuttons%27%29%7Bmargin%3A0%3Bpadding%3A0%7Dbody%7Bfont%3A13%2E34px%20helvetica%2Carial%2Cfreesans%2Cclean%2Csans%2Dserif%3B%2Dwebkit%2Dfont%2Dsmoothing%3Asubpixel%2Dantialiased%3Bline%2Dheight%3A1%2E4%3Bpadding%3A3px%3Bbackground%3A%23fff%3Bborder%2Dradius%3A3px%3B%2Dmoz%2Dborder%2Dradius%3A3px%3B%2Dwebkit%2Dborder%2Dradius%3A3px%7Dp%7Bmargin%3A1em%200%7Da%7Bcolor%3A%234183c4%3Btext%2Ddecoration%3Anone%7Dbody%7Bbackground%2Dcolor%3A%23fff%3Bpadding%3A30px%3Bmargin%3A15px%3Bfont%2Dsize%3A14px%3Bline%2Dheight%3A1%2E6%7Dbody%3E%2A%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%21important%7Dbody%3E%2A%3Alast%2Dchild%7Bmargin%2Dbottom%3A0%21important%7D%40media%20screen%7Bbody%7Bbox%2Dshadow%3A0%200%200%201px%20%23cacaca%2C0%200%200%204px%20%23eee%7D%7Dh1%2Ch2%2Ch3%2Ch4%2Ch5%2Ch6%7Bmargin%3A20px%200%2010px%3Bpadding%3A0%3Bfont%2Dweight%3Abold%3B%2Dwebkit%2Dfont%2Dsmoothing%3Asubpixel%2Dantialiased%3Bcursor%3Atext%7Dh1%7Bfont%2Dsize%3A28px%3Bcolor%3A%23000%7Dh2%7Bfont%2Dsize%3A24px%3Bborder%2Dbottom%3A1px%20solid%20%23ccc%3Bcolor%3A%23000%7Dh3%7Bfont%2Dsize%3A18px%3Bcolor%3A%23333%7Dh4%7Bfont%2Dsize%3A16px%3Bcolor%3A%23333%7Dh5%7Bfont%2Dsize%3A14px%3Bcolor%3A%23333%7Dh6%7Bcolor%3A%23777%3Bfont%2Dsize%3A14px%7Dp%2Cblockquote%2Ctable%2Cpre%7Bmargin%3A15px%200%7Dul%7Bpadding%2Dleft%3A30px%7Dol%7Bpadding%2Dleft%3A30px%7Dol%20li%20ul%3Afirst%2Dof%2Dtype%7Bmargin%2Dtop%3A0%7Dhr%7Bbackground%3Atransparent%20url%28data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw%2FeHBhY2tldCBiZWdpbj0i77u%2FIiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8%2BIDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI%2FPqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC%29%20repeat%2Dx%200%200%3Bborder%3A0%20none%3Bcolor%3A%23ccc%3Bheight%3A4px%3Bpadding%3A0%7Dbody%3Eh2%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%3Bpadding%2Dtop%3A0%7Dbody%3Eh1%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%3Bpadding%2Dtop%3A0%7Dbody%3Eh1%3Afirst%2Dchild%2Bh2%7Bmargin%2Dtop%3A0%3Bpadding%2Dtop%3A0%7Dbody%3Eh3%3Afirst%2Dchild%2Cbody%3Eh4%3Afirst%2Dchild%2Cbody%3Eh5%3Afirst%2Dchild%2Cbody%3Eh6%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%3Bpadding%2Dtop%3A0%7Da%3Afirst%2Dchild%20h1%2Ca%3Afirst%2Dchild%20h2%2Ca%3Afirst%2Dchild%20h3%2Ca%3Afirst%2Dchild%20h4%2Ca%3Afirst%2Dchild%20h5%2Ca%3Afirst%2Dchild%20h6%7Bmargin%2Dtop%3A0%3Bpadding%2Dtop%3A0%7Dh1%2Bp%2Ch2%2Bp%2Ch3%2Bp%2Ch4%2Bp%2Ch5%2Bp%2Ch6%2Bp%2Cul%20li%3E%3Afirst%2Dchild%2Col%20li%3E%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%7Ddl%7Bpadding%3A0%7Ddl%20dt%7Bfont%2Dsize%3A14px%3Bfont%2Dweight%3Abold%3Bfont%2Dstyle%3Aitalic%3Bpadding%3A0%3Bmargin%3A15px%200%205px%7Ddl%20dt%3Afirst%2Dchild%7Bpadding%3A0%7Ddl%20dt%3E%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%7Ddl%20dt%3E%3Alast%2Dchild%7Bmargin%2Dbottom%3A0%7Ddl%20dd%7Bmargin%3A0%200%2015px%3Bpadding%3A0%2015px%7Ddl%20dd%3E%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%7Ddl%20dd%3E%3Alast%2Dchild%7Bmargin%2Dbottom%3A0%7Dblockquote%7Bborder%2Dleft%3A4px%20solid%20%23DDD%3Bpadding%3A0%2015px%3Bcolor%3A%23777%7Dblockquote%3E%3Afirst%2Dchild%7Bmargin%2Dtop%3A0%7Dblockquote%3E%3Alast%2Dchild%7Bmargin%2Dbottom%3A0%7Dtable%7Bborder%2Dcollapse%3Acollapse%3Bborder%2Dspacing%3A0%3Bfont%2Dsize%3A100%25%3Bfont%3Ainherit%7Dtable%20th%7Bfont%2Dweight%3Abold%3Bborder%3A1px%20solid%20%23ccc%3Bpadding%3A6px%2013px%7Dtable%20td%7Bborder%3A1px%20solid%20%23ccc%3Bpadding%3A6px%2013px%7Dtable%20tr%7Bborder%2Dtop%3A1px%20solid%20%23ccc%3Bbackground%2Dcolor%3A%23fff%7Dtable%20tr%3Anth%2Dchild%282n%29%7Bbackground%2Dcolor%3A%23f8f8f8%7Dimg%7Bmax%2Dwidth%3A100%25%7Dcode%2Ctt%7Bmargin%3A0%202px%3Bpadding%3A0%205px%3Bwhite%2Dspace%3Anowrap%3Bborder%3A1px%20solid%20%23eaeaea%3Bbackground%2Dcolor%3A%23f8f8f8%3Bborder%2Dradius%3A3px%3Bfont%2Dfamily%3AConsolas%2C%27Liberation%20Mono%27%2CCourier%2Cmonospace%3Bfont%2Dsize%3A12px%3Bcolor%3A%23333%7Dpre%3Ecode%7Bmargin%3A0%3Bpadding%3A0%3Bwhite%2Dspace%3Apre%3Bborder%3A0%3Bbackground%3Atransparent%7D%2Ehighlight%20pre%7Bbackground%2Dcolor%3A%23f8f8f8%3Bborder%3A1px%20solid%20%23ccc%3Bfont%2Dsize%3A13px%3Bline%2Dheight%3A19px%3Boverflow%3Aauto%3Bpadding%3A6px%2010px%3Bborder%2Dradius%3A3px%7Dpre%7Bbackground%2Dcolor%3A%23f8f8f8%3Bborder%3A1px%20solid%20%23ccc%3Bfont%2Dsize%3A13px%3Bline%2Dheight%3A19px%3Boverflow%3Aauto%3Bpadding%3A6px%2010px%3Bborder%2Dradius%3A3px%7Dpre%20code%2Cpre%20tt%7Bbackground%2Dcolor%3Atransparent%3Bborder%3A0%7D%2Epoetry%20pre%7Bfont%2Dfamily%3AGeorgia%2CGaramond%2Cserif%21important%3Bfont%2Dstyle%3Aitalic%3Bfont%2Dsize%3A110%25%21important%3Bline%2Dheight%3A1%2E6em%3Bdisplay%3Ablock%3Bmargin%2Dleft%3A1em%7D%2Epoetry%20pre%20code%7Bfont%2Dfamily%3AGeorgia%2CGaramond%2Cserif%21important%3Bword%2Dbreak%3Abreak%2Dall%3Bword%2Dbreak%3Abreak%2Dword%3B%2Dwebkit%2Dhyphens%3Aauto%3B%2Dmoz%2Dhyphens%3Aauto%3Bhyphens%3Aauto%3Bwhite%2Dspace%3Apre%2Dwrap%7Dsup%2Csub%2Ca%2Efootnote%7Bfont%2Dsize%3A1%2E4ex%3Bheight%3A0%3Bline%2Dheight%3A1%3Bvertical%2Dalign%3Asuper%3Bposition%3Arelative%7Dsub%7Bvertical%2Dalign%3Asub%3Btop%3A%2D1px%7D%40media%20print%7Bbody%7Bbackground%3A%23fff%7Dimg%2Cpre%2Cblockquote%2Ctable%2Cfigure%7Bpage%2Dbreak%2Dinside%3Aavoid%7Dbody%7Bbackground%3A%23fff%3Bborder%3A0%7Dcode%7Bbackground%2Dcolor%3A%23fff%3Bcolor%3A%23333%21important%3Bpadding%3A0%20%2E2em%3Bborder%3A1px%20solid%20%23dedede%7Dpre%7Bbackground%3A%23fff%7Dpre%20code%7Bbackground%2Dcolor%3Awhite%21important%3Boverflow%3Avisible%7D%7D%40media%20screen%7Bbody%2Einverted%7Bcolor%3A%23eee%21important%3Bborder%2Dcolor%3A%23555%3Bbox%2Dshadow%3Anone%7D%2Einverted%20body%2C%2Einverted%20hr%20%2Einverted%20p%2C%2Einverted%20td%2C%2Einverted%20li%2C%2Einverted%20h1%2C%2Einverted%20h2%2C%2Einverted%20h3%2C%2Einverted%20h4%2C%2Einverted%20h5%2C%2Einverted%20h6%2C%2Einverted%20th%2C%2Einverted%20%2Emath%2C%2Einverted%20caption%2C%2Einverted%20dd%2C%2Einverted%20dt%2C%2Einverted%20blockquote%7Bcolor%3A%23eee%21important%3Bborder%2Dcolor%3A%23555%3Bbox%2Dshadow%3Anone%7D%2Einverted%20td%2C%2Einverted%20th%7Bbackground%3A%23333%7D%2Einverted%20h2%7Bborder%2Dcolor%3A%23555%7D%2Einverted%20hr%7Bborder%2Dcolor%3A%23777%3Bborder%2Dwidth%3A1px%21important%7D%3A%3Aselection%7Bbackground%3Argba%28157%2C193%2C200%2C0%2E5%29%7Dh1%3A%3Aselection%7Bbackground%2Dcolor%3Argba%2845%2C156%2C208%2C0%2E3%29%7Dh2%3A%3Aselection%7Bbackground%2Dcolor%3Argba%2890%2C182%2C224%2C0%2E3%29%7Dh3%3A%3Aselection%2Ch4%3A%3Aselection%2Ch5%3A%3Aselection%2Ch6%3A%3Aselection%2Cli%3A%3Aselection%2Col%3A%3Aselection%7Bbackground%2Dcolor%3Argba%28133%2C201%2C232%2C0%2E3%29%7Dcode%3A%3Aselection%7Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%2E7%29%3Bcolor%3A%23eee%7Dcode%20span%3A%3Aselection%7Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%2E7%29%21important%3Bcolor%3A%23eee%21important%7Da%3A%3Aselection%7Bbackground%2Dcolor%3Argba%28255%2C230%2C102%2C0%2E2%29%7D%2Einverted%20a%3A%3Aselection%7Bbackground%2Dcolor%3Argba%28255%2C230%2C102%2C0%2E6%29%7Dtd%3A%3Aselection%2Cth%3A%3Aselection%2Ccaption%3A%3Aselection%7Bbackground%2Dcolor%3Argba%28180%2C237%2C95%2C0%2E5%29%7D%2Einverted%7Bbackground%3A%230b2531%3Bbackground%3A%23252a2a%7D%2Einverted%20body%7Bbackground%3A%23252a2a%7D%2Einverted%20a%7Bcolor%3A%23acd1d5%7D%7D%2Ehighlight%20%2Ec%7Bcolor%3A%23998%3Bfont%2Dstyle%3Aitalic%7D%2Ehighlight%20%2Eerr%7Bcolor%3A%23a61717%3Bbackground%2Dcolor%3A%23e3d2d2%7D%2Ehighlight%20%2Ek%2C%2Ehighlight%20%2Eo%7Bfont%2Dweight%3Abold%7D%2Ehighlight%20%2Ecm%7Bcolor%3A%23998%3Bfont%2Dstyle%3Aitalic%7D%2Ehighlight%20%2Ecp%7Bcolor%3A%23999%3Bfont%2Dweight%3Abold%7D%2Ehighlight%20%2Ec1%7Bcolor%3A%23998%3Bfont%2Dstyle%3Aitalic%7D%2Ehighlight%20%2Ecs%7Bcolor%3A%23999%3Bfont%2Dweight%3Abold%3Bfont%2Dstyle%3Aitalic%7D%2Ehighlight%20%2Egd%7Bcolor%3A%23000%3Bbackground%2Dcolor%3A%23fdd%7D%2Ehighlight%20%2Egd%20%2Ex%7Bcolor%3A%23000%3Bbackground%2Dcolor%3A%23faa%7D%2Ehighlight%20%2Ege%7Bfont%2Dstyle%3Aitalic%7D%2Ehighlight%20%2Egr%7Bcolor%3A%23a00%7D%2Ehighlight%20%2Egh%7Bcolor%3A%23999%7D%2Ehighlight%20%2Egi%7Bcolor%3A%23000%3Bbackground%2Dcolor%3A%23dfd%7D%2Ehighlight%20%2Egi%20%2Ex%7Bcolor%3A%23000%3Bbackground%2Dcolor%3A%23afa%7D%2Ehighlight%20%2Ego%7Bcolor%3A%23888%7D%2Ehighlight%20%2Egp%7Bcolor%3A%23555%7D%2Ehighlight%20%2Egs%7Bfont%2Dweight%3Abold%7D%2Ehighlight%20%2Egu%7Bcolor%3A%23800080%3Bfont%2Dweight%3Abold%7D%2Ehighlight%20%2Egt%7Bcolor%3A%23a00%7D%2Ehighlight%20%2Ekc%2C%2Ehighlight%20%2Ekd%2C%2Ehighlight%20%2Ekn%2C%2Ehighlight%20%2Ekp%2C%2Ehighlight%20%2Ekr%7Bfont%2Dweight%3Abold%7D%2Ehighlight%20%2Ekt%7Bcolor%3A%23458%3Bfont%2Dweight%3Abold%7D%2Ehighlight%20%2Em%7Bcolor%3A%23099%7D%2Ehighlight%20%2Es%7Bcolor%3A%23d14%7D%2Ehighlight%20%2Ena%7Bcolor%3A%23008080%7D%2Ehighlight%20%2Enb%7Bcolor%3A%230086b3%7D%2Ehighlight%20%2Enc%7Bcolor%3A%23458%3Bfont%2Dweight%3Abold%7D%2Ehighlight%20%2Eno%7Bcolor%3A%23008080%7D%2Ehighlight%20%2Eni%7Bcolor%3A%23800080%7D%2Ehighlight%20%2Ene%2C%2Ehighlight%20%2Enf%7Bcolor%3A%23900%3Bfont%2Dweight%3Abold%7D%2Ehighlight%20%2Enn%7Bcolor%3A%23555%7D%2Ehighlight%20%2Ent%7Bcolor%3A%23000080%7D%2Ehighlight%20%2Env%7Bcolor%3A%23008080%7D%2Ehighlight%20%2Eow%7Bfont%2Dweight%3Abold%7D%2Ehighlight%20%2Ew%7Bcolor%3A%23bbb%7D%2Ehighlight%20%2Emf%2C%2Ehighlight%20%2Emh%2C%2Ehighlight%20%2Emi%2C%2Ehighlight%20%2Emo%7Bcolor%3A%23099%7D%2Ehighlight%20%2Esb%2C%2Ehighlight%20%2Esc%2C%2Ehighlight%20%2Esd%2C%2Ehighlight%20%2Es2%2C%2Ehighlight%20%2Ese%2C%2Ehighlight%20%2Esh%2C%2Ehighlight%20%2Esi%2C%2Ehighlight%20%2Esx%7Bcolor%3A%23d14%7D%2Ehighlight%20%2Esr%7Bcolor%3A%23009926%7D%2Ehighlight%20%2Es1%7Bcolor%3A%23d14%7D%2Ehighlight%20%2Ess%7Bcolor%3A%23990073%7D%2Ehighlight%20%2Ebp%7Bcolor%3A%23999%7D%2Ehighlight%20%2Evc%2C%2Ehighlight%20%2Evg%2C%2Ehighlight%20%2Evi%7Bcolor%3A%23008080%7D%2Ehighlight%20%2Eil%7Bcolor%3A%23099%7D%2Ehighlight%20%2Egc%7Bcolor%3A%23999%3Bbackground%2Dcolor%3A%23eaf2f5%7D%2Etype%2Dcsharp%20%2Ehighlight%20%2Ek%2C%2Etype%2Dcsharp%20%2Ehighlight%20%2Ekt%7Bcolor%3A%2300F%7D%2Etype%2Dcsharp%20%2Ehighlight%20%2Enf%7Bcolor%3A%23000%3Bfont%2Dweight%3Anormal%7D%2Etype%2Dcsharp%20%2Ehighlight%20%2Enc%7Bcolor%3A%232b91af%7D%2Etype%2Dcsharp%20%2Ehighlight%20%2Enn%7Bcolor%3A%23000%7D%2Etype%2Dcsharp%20%2Ehighlight%20%2Es%2C%2Etype%2Dcsharp%20%2Ehighlight%20%2Esc%7Bcolor%3A%23a31515%7D%0A" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="lab-3-virtual-memory-and-demand-paging-100-pts">Lab 3: Virtual Memory and Demand Paging (100 pts)</h1>
+<h3 id="cs-503-fall-2017">CS 503 Fall 2017</h3>
+<h3 id="due-friday-december-8.-2017">Due: Friday, December 8. 2017</h3>
+<p>In this last lab, you will be implementing paging mechanism on top of XINU. This lab has more workload than previous ones, so do start early!</p>
+<p>Check your <a href="https://docs.google.com/spreadsheets/d/1jOVq3hsAOxnTtKRua3jk2rsTPr-eoYDd7cKFUjOXZFI/edit?usp=sharing">assigned port range</a> to use.</p>
+<p>Please clone the code for this assignment using:</p>
+<pre><code>tar zxvf /u/u3/cs503/xinu-fall17/xinu-qemu-paging.tar.gz</code></pre>
+<blockquote>
+<p>NOTE: this code base contains the code for the backing store calls, thus it’s recommendded to start with provided code base directly (instead of integrating with previous labs if you were doing so).</p>
+</blockquote>
+<blockquote>
+<p>NOTE: Similar to Lab2, the provided code base supports both QEMU and Galileo environments. Again, as our grading will be based on Galileo, you should double-check if your submission is working correctly on Galileo.</p>
+</blockquote>
+<blockquote>
+<p>NOTE: This is a long handout. Please read this handout very carefully before starting this assignment.If you&gt; do not understand anything, please seek the TA in the PSO sessions.</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>We have discussed the myriad benefits that virtual memory brings which justifies the investment in hardware support to achieve efficiency and speed. Demand paging allows mapping a large virtual/logical address space onto a potentially much smaller and non-contiguous (i.e. fragmented) physical address space. Main memory (i.e. RAM) is viewed as a cache comprised of fixed size blocks called frames in which pages (of equal size as frames) containing instructions and data referenced by processes are held. Due to the size mismatch between virtual and physical memory, a significant part of a process’s virtual address space (i.e. pages that it references) is kept in secondary persistent storage such as disk or flash memory (i.e., solid state drive).</p>
+<p>When a kernel runs out of frames to store pages needed by a process, some pages that are resident in RAM must be evicted to secondary storage to free up frames. In XINU this is accomplished by using a “backing store” that is implemented as a remote disk on a frontend Linux PC in the XINU Lab. The server that handles the remote disk functionality on a frontend is rdserver whose code is in <code>/rdserver/</code>. The backing store is accessed by the XINU kernel and its processes running on backend machines through a set of APIs that invoke the services of <code>rdsproc</code> which is implemented as the pseudo-device RDISK (check <code>/config/</code>). <code>rdsproc</code> is a high priority process that shows up under <code>xsh</code> when running the <code>ps</code> command, you may also have seen it in previous labs. The APIs open RDISK and read/write to it to access the remote disk that serves as secondary storage on a frontend. Find more details on the APIs later.</p>
+<p>Note that the XINU backing store may be slower than a local disk since network communication is involved to read/write pages on remote disk. <code>rdserver</code> on a frontend communicates with <code>rdsproc</code> running on a backend. UDP is used as the transport protocol in order to achieve low overhead, hence, the backing store is unreliable and read/write requests may fail. (Take course CS536 for details of UDP, etc.) This is expected to be rare in the environment of XINU lab, however, you’ll need to consider such error cases during implementation.</p>
+<h2 id="virtual-memory-system-support">Virtual Memory System Support</h2>
+<p>To help with implementing the VM/demand paging related system/function calls, we provide a description of the overall organization of XINU’s demand paging system, including the key components and how they relate to each other. You may choose to adopt a different implementation strategy if you think it is more effective for realizing the system calls in Section 2. If you are taking your own route, please check with the TAs so that they are kept in the loop.</p>
+<p><strong>Important:</strong> You will need to consult the Intel manuals, in particular, volume III, chapters 2-5, to acquaint yourself with Intel specific hardware support for virtual memory and demand paging. Intel manuals: <a href="intel-vol1.pdf">Volume 1</a> | <a href="intel-vol2.pdf">Volume 2</a> | <a href="intel-vol3.pdf">Volume 3</a></p>
+<h2 id="demand-paging-services">Demand Paging Services</h2>
+<p>The coding part of Lab3 centers on implementing a set of system calls that export virtual memory services to user processes:</p>
+<pre><code>pid32 vcreate(void *funcaddr, uint32 ssize, uint32 hsize, pri16 priority, char *name, uint32 nargs, ...);</code></pre>
+<p>This system call creates a new XINU process. Its difference from create() is that the process’s heap will be private and reside in virtual memory. The size of the heap (in number of pages, not bytes) is specified by <code>hsize</code>.</p>
+<pre><code>char* vgetmem(uint32 nbytes);</code></pre>
+<p>Much like <code>getmem()</code>, <code>vgetmem()</code> allocates the requested amount of memory, if available. The difference is that <code>vgetmem()</code> gets the memory from a process’s private heap in virtual memory. A call to <code>getmem()</code> will continue to allocate memory from the regular XINU kernel heap.</p>
+<pre><code>syscall vfreemem(char *blkaddr, uint32 nbytes);</code></pre>
+<p><code>vfreemem()</code> is a counterpart of <code>freemem()</code> for private heap in virtual memory. It takes two parameters which are similar to those of <code>freemem()</code>.</p>
+<pre><code>syscall srpolicy(int policy);</code></pre>
+<p>This function will be used to set the page replacement policy. Available policy options are defined in <code>/include/paging.h</code>. By default, we are doing FIFO. In the Bonus Problem, you will implement another GCA policy, the <code>Global Clock Algorithm</code>.</p>
+<p>This system call will NOT be invoked at arbitrary places inside your code to force changing from one replacement policy to another. So don’t worry about switching from one replacement policy to another midway through execution. You may assume that the default policy is FIFO and if <code>srpolicy(...)</code> is called, it will be the first statement in the program.</p>
+<h3 id="backing-stores-and-memory-management">Backing Stores and Memory Management</h3>
+<h4 id="backing-stores">Backing Stores</h4>
+<p>Virtual memory commonly uses disk space or flash RAM (i.e. SSD) to extend the memory of the machine. This version of XINU does not provide local disk file system support. In place of secondary storage implemented on local disk, we will use a networked remote disk on a frontend Linux PC. A page server, <code>rdserver</code>, running on the frontend will act as a backing store. To access the services of <code>rdserver</code>, the XINU kernel and its processes must go through <code>rdsproc</code>, the high priority process that runs on a backend. <code>rdsproc</code> conveys backing store requests by XINU and its processes to <code>rdserver</code>, and relays the response from <code>rdserver</code> to XINU and its processes. <code>rdsproc</code> (source code in <code>/device/rds/</code>) implements the remote disk pseudo-device RDISK (see <code>/config/</code>) which is accessed via <code>open()</code> / <code>read()</code> / <code>write()</code>. An API for backing store related operations on RDISK is provided through following definitions/functions (see <code>/paging/</code>):</p>
+<pre><code>bsd_t</code></pre>
+<p>The backing store descriptor type is used to reference a backing store. The type declaration is specified in <code>/include/kernel.h</code>. For practical reasons, each student is limited to 8 mappings at a time (ranging from <code>MIN</code>ID<code>to</code>MAX<code>ID</code>). See <code>paging.h</code> and also <code>page</code>server.h<code>in</code>/include/`.</p>
+<pre><code>bsd_t allocate_bs(uint32 npages);</code></pre>
+<p>Allocates a free backing store; returns a bs number if successfull or SYSERR if they are all occupied.</p>
+<pre><code>bsd_t deallocate_bs(bsd_t store);</code></pre>
+<p>Deallocate the backing store if it is not being used and return the bs number; return SYSERR otherwise.</p>
+<pre><code>bsd_t open_bs(bsd_t store);</code></pre>
+<p>Return the store number if the backing is allocated and increase the use count; return SYSERR otherwise.</p>
+<pre><code>bsd_t close_bs(bsd_t store);</code></pre>
+<p>Return the store number if successful and decrease use count; return SYSERR otherwise.</p>
+<pre><code>syscall read_bs(char *dst, bsd_t store, uint32 pagenum);</code></pre>
+<p>This copies the <code>pagenum</code>’th page from the backing store referenced by ID <code>store</code> to memory pointed by <code>dst</code>. It returns OK on success, SYSERR otherwise. The first page of a backing store is page zero.</p>
+<pre><code>syscall write_bs(char *src, bsd_t store, uint32 pagenum);</code></pre>
+<p>This copies a page pointed to by <em>src</em> to the <em>pagenum</em>’th page of the backing store referenced by store. It returns OK on success, SYSERR otherwise.</p>
+<p>Note that <code>read_bs()</code> and <code>write_bs()</code> are both blocking calls. But they can still be used inside our page fault interrupt handling routine. In fact, we are unable to avoid that under the environment of “remote network disk”.</p>
+<p>Generally, there is no need to modify them, unless you decide to implement additional optimizations.</p>
+<p>As noted above, please take into consideration that demand paging may incur long delays due to its networked nature in XINU. There is also the possibility that calls may fail and return SYSERR due to lost packets. This is expected to be rare in the environment of XINU lab. However, you must check for error conditions in your code and take appropriate actions to prevent erroneous program execution. Note that the provided API are blocking calls that result in rescheduling. This is a consequence of disk I/O (even more so, remote disk I/O) being significantly slower than RAM.</p>
+<p>The paging API uses a global table <code>bstab[]</code> with 8 entries to store information about each mapping. You may choose to make a similar one or extend it when maintaining your data structures later on.</p>
+<p>Side note: there was also <code>get_bs()</code> and also <code>release_bs()</code> API calls which may lead to the scenario where different processes have conflicts using backing stores. The API we provide here is building on top of these, but tries to avoid that potential problem with the help of additional book-keeping. So basically you don’t need to invoke those two old functions directly.</p>
+<h4 id="using-the-paging-server-api">Using the Paging Server API</h4>
+<blockquote>
+<p>NOTE: This step is not required when testing on QEMU, as RDISK device is emulated in QEMU environments (i.e., no need to run <code>rdserver</code> on a frontend machine). For more details, you may have a look at implementations in <code>device/qrds</code>.</p>
+</blockquote>
+<p>The paging server API (<code>get_bs()</code>, <code>read_bs()</code>, <code>write_bs()</code>, <code>release_bs()</code>) through RDISK (implemented using <code>rdsproc</code> and <code>rdserver</code>) creates a file on a frontend Linux PC which serves as the backing store of XINU’s demand paging subsystem. The mapping between the pages in a backing store and the blocks on the remote disk file are calculated in the <code>read_bs()</code>/<code>write_bs()</code> calls. The block size for the remote disk is 512 bytes (<code>RD_BLKSIZ</code>, as defined in <em>/include/rdisksys.h</em>), and each mapping is translated to 205 pages (<code>RD_PAGES_PER_BS</code>, as defined in <em>/include/page_server.h</em>), which is equivalent to 1640 blocks on the remote disk (recall a page is of size 4096 bytes on our x86 backends). In the current version of XINU, only 200 pages (<code>MAX_PAGES_PER_BS</code>, as defined in <em>/include/page_server.h</em>) are allowed per mapping.</p>
+<p>The remote disk server needs to be started before you load and run the XINU kernel. The code for rdserver is in <em>/rdserver/</em>. Run</p>
+<pre><code>      make clean
+      make
+    </code></pre>
+<p>in this directory and then start the server by:</p>
+<pre><code>      ./rdserver [port number]
+    </code></pre>
+<p>The port number used in the code given to you is “33124” as specified in <em>/include/rdisksys.h</em>, <code>RD_SERVER_PORT</code>. The server runs in broadcast mode, hence anyone who uses the same port number will access the same server.</p>
+<p><strong>Important:</strong> To avoid conflict, each student will be assigned a range of port numbers to use. Check <a href="port_assignment.html">here</a> for which port numbers you could use. Then change the port number in <em>/include/rdisksys.h</em>, and also specify the right port when starting <code>rdserver</code> on a frontend PC.</p>
+<p>If you look into the code of <code>psinit()</code>, you will find that it opens a connection to the remote disk and creates a file named “backing_store”. This file will contain all the data you read/write using the paging API. The rdserver can be terminated by issuing “<code>Ctrl-C</code>” but note that the file is persistent. You will need to manually delete the file <em>backing_store</em> in the <em>/rdserver/</em> directory to reset and start afresh. Note that command</p>
+<pre><code>make clean</code></pre>
+<p>will also delete the <em>backing_store</em> file. Remember to do <code>make clean</code> before submitting. Please note that it is the programmer’s responsibility to make sure a backing store is allocated before using it, and to open/close in right sequence.</p>
+<h4 id="memory-layout">Memory Layout</h4>
+<p>The basic XINU memory layout for our x86 backends is as follows:</p>
+<pre><code>------------------------------------------------------------------
+device memory
+1024 pages starting at 0x90000000
+(pages 589824 - 590847)
+------------------------------------------------------------------
+virtual heap
+(pages 4096 and beyond)
+------------------------------------------------------------------
+3072 frames
+(pages 1024 - 4095)
+------------------------------------------------------------------
+free memory
+(pages 327 - 1023)
+------------------------------------------------------------------
+XINU text, data, bss
+(pages 257 - 326)
+------------------------------------------------------------------
+Memory reserved for Boot loader
+(pages 0 - 256)
+------------------------------------------------------------------</code></pre>
+<p>As gleaned from the memory layout, the paging version of XINU we will be using compiles to about 70 pages. We will place the free frames into pages 1024 through 4095, giving a total of 3072 frames. These (initially) free frames will be used to store resident pages, page directories, and page tables. Hence they are part of what would be considered “kernel memory”. The free memory below page 1024 is used for XINU’s kernel heap which is organized as a free list. <code>getmem()</code> and <code>getstk()</code> obtain memory from this area, allocated from the bottom and top, respectively. This conforms with the XINU memory layout.</p>
+<p>All memory below page 4096 will be “global” (or shared). That is, it is usable and visible by all processes and accessible by simply using physical addresses. In other words, all page tables for page entries 0-4095 implement an identity map. That is, the physical address is the virtual address.</p>
+<p>1024 pages starting at memory address 0x90000000 are used for device memory (Ethernet and Console) and must be mapped at the same physical address. Hence, the first four page tables and the page table for device memory for every process will be the same, i.e. they are shared/global.</p>
+<p>Memory at page 4096 and above constitute a process’s private virtual memory. This private address space is visible only to the process that owns it. A process’s private heap is mapped somewhere in this area by <code>vcreate()</code>.</p>
+<h4 id="page-tables-and-page-directories">Page Tables and Page Directories</h4>
+<p>Page tables and page directories can be placed in any free frame of the designated area. If your memory is divided into 4096 pages, then they should be placed in pages 1024-4095 (starting with 0) as the memory layout shown above. They should be placed on page boundaries only, i.e. the starting address of any page table or page directory should be divisible by the size of the pages <code>NBPG</code>.</p>
+<p><strong>For Lab3, you will not be paging either the page directories or page tables.</strong> That is, page directories and page tables should not be relying on backing stores. For page directory, they must always be allocated. However, it is not practical to allocate all potential page tables for a newly created process. Therefore, to conserve memory, page tables are created on-demand. The first time a page is touched (i.e. it has been mapped by a process), a page table needs to be allocated. Conversely, when a page table is no longer needed, it should be removed in order to conserve space.</p>
+<p>In <code>/include/paging.h</code>, there are two struct <code>pd_t</code> and <code>pt_t</code> which represent Page Directory and Page Table, repectively. They both contain a lot of bit fields. When initializing these fields:</p>
+<ul>
+<li>For page directories, set the following bits: set <code>pd_write</code> always and set <code>pd_pres</code> whenever the corresponding page tables are present in the main memory). You can make all the other bits zero.</li>
+<li>For the four global page tables, set the following bits, <code>pt_pres</code> and <code>pt_write</code>. You can make others zero.</li>
+</ul>
+<p>This should be fairly straightforward after reading the Intel manuals carefully.</p>
+<h3 id="page-faults-page-replacement">Page Faults &amp; Page Replacement</h3>
+<h4 id="page-faults">Page Faults</h4>
+<p>A page fault indicates one of two things: the virtual page on which the faulted address exists is not present, or the page table which contains the entry for the page on which the faulted address exists is not present. To handle a page fault, do the following:</p>
+<ol type="1">
+<li>Get the faulted address <code>a</code>.</li>
+<li>Let <code>vp</code> be the virtual page number of the page containing the faulted address.</li>
+<li>Let <code>pd</code> point to the current page directory.</li>
+<li>Check that <code>a</code> is a valid address, if not, print an error message and kill the process.</li>
+<li>Let <code>p</code> be the upper ten bits of <code>a</code>.</li>
+<li>Let <code>q</code> be the bits [21:12] of <code>a</code>.</li>
+<li>Let <code>pt</code> point to the p-th page table. If the p-th page table does not exist, obtain a frame for it and initialize it.</li>
+<li>To bring in the faulted page, do the following:
+<ol type="1">
+<li>Using the backing store map, find the store <code>s</code> and page offset <code>o</code> which correspond to <code>vp</code>.</li>
+<li>In the inverted page table, increment the reference count of the frame which holds <code>pt</code>. This indicates that one more of <code>pt</code>’s entries is marked “present”.</li>
+<li>Obtain a free frame, <code>f</code>.</li>
+<li>Copy the page <code>o</code> of store <code>s</code> to <code>f</code>.</li>
+<li>Update <code>pt</code> to mark the appropriate entry as present, and set any other fields. Also set the address portion within the entry to point to frame <code>f</code>.</li>
+</ol></li>
+</ol>
+<h4 id="page-fault-interrupt-service-routine-isr">Page Fault Interrupt Service Routine (ISR)</h4>
+<p>A page fault triggers interrupt number 14 (see Intel manual). When an interrupt occurs, CS:IP are pushed onto the stack, followed by an error code (see Intel Manual, volume III, chapter 5).</p>
+<pre><code>--------------------
+error code
+--------------------
+IP
+--------------------
+CS
+--------------------
+...</code></pre>
+<p>Execution then jumps to the ISR. We do not use a common dispatcher for this ISR. To specify the page fault ISR in the interrupt vector, please use</p>
+<pre><code>set_evec(uint32 interrupt_number, (void (*isr)(void)));</code></pre>
+<p>Your ISR should be a routine written in assembly (you cannot write the entire code in C). Although you may in between call a function written in C. The first and last things the ISR does are to save and restore all general purpose registers. It must also remove the error code from the top of the stack at some point. Like other ISRs, it should use <code>iret</code> (see Intel Manual, volume II), not <code>ret</code>, to return when finished.</p>
+<p>This is supposed to involve some assembly code. After Lab1, you should already have some experience writing in assembly. But since we all know that writing full handler routine in assembly may be error-prone and hard to debug, it’s recommended to implement only those necessary parts in assembly, and call a C function which implements full functionality. Here we provide a pseudo code snippet for guidance.</p>
+<ol type="1">
+<li>clear all interrupts</li>
+<li>Store error code in a global variable. (If you use any temp register to do this, then make sure that you save/restore that value as well).</li>
+<li>save all registers</li>
+<li>call C function to handle the interrupt and do all the required processing</li>
+<li>restore all registers</li>
+<li>remove error code from stack</li>
+<li>restore interrupts</li>
+<li>iret</li>
+</ol>
+<h4 id="obtaining-a-free-frame">Obtaining a Free Frame</h4>
+<p>When a free frame is needed, it may be necessary to remove a resident page from a frame. How you pick the page to remove depends on your page replacement policy. The function to find a free page may have the steps below:</p>
+<ol type="1">
+<li>Search the inverted page table for an empty frame. If one exists, stop.</li>
+<li>Else, pick a page to replace (using the current replacement policy).</li>
+<li>Using the inverted page table, get <code>vp</code>, the virtual page number of the page to be replaced.</li>
+<li>Let <code>a</code> be <code>vp</code>*4096 (the first virtual address on page <code>vp</code>).</li>
+<li>Let <code>p</code> be the high 10 bits of <code>a</code>. Let <code>q</code> be bits <code>[21:12]</code> of <code>a</code>.</li>
+<li>Let <code>pid</code> be the process id of the process owning <code>vp</code>.</li>
+<li>Let <code>pd</code> point to the page directory of process pid.</li>
+<li>Let <code>pt</code> point to the pid’s <code>p</code>th page table.</li>
+<li>Mark the appropriate entry of <code>pt</code> as not present.</li>
+<li>If the page being removed belongs to the current process, invalidate the TLB entry for the page <code>vp</code>, using the <code>invlpg</code> instruction (see Intel Manual, volumes II and III for more details on this instruction).</li>
+<li>In the inverted page table, decrement the reference count of the frame occupied by <code>pt</code>. If the reference count has reached zero, you should mark the appropriate entry in <code>pd</code> as “not present.” This conserves frames by keeping only page tables which are necessary.</li>
+<li>If the dirty bit for page <code>vp</code> was set in its page table, you must do the following:
+<ol type="1">
+<li>Using the backing store map, find the store and page offset within the store, given <code>pid</code> and <code>a</code>. If the lookup fails, something is wrong. Print an error message and kill the process with id <code>pid</code>.</li>
+<li>Write the page back to the backing store.</li>
+</ol></li>
+</ol>
+<h4 id="page-replacement-policies">Page Replacement Policies</h4>
+<p>Implement FIFO as the default page replacement policy. In the Bonus Problem, you will be asked to implement another GCA policy.</p>
+<p>To test your replacement policies, you may need to modify <code>NFRAMES</code> macro defined in <code>/include/paging.h</code>.</p>
+<p>The specifications say that the free memory in the main memory from the 1024th page to the 4095th page accounts for 3072 free frames. It’s generally recommendded not to have more that 200 pages in a single backing store (the hard line is 205, as defined in <code>RD_PAGES_PER_BS</code> in <em>/include/page_server.h</em>. There are 8 backing stores available for you. Hence, you can have at most 1600 pages of virtual memory in total for different processes. This entire 1600 pages can be easily accommodated in our 3072 free frames. Then there will be no need for any page replacement at all!</p>
+<p><strong>There is a constant called <code>NFRAMES</code> in <em>/include/paging.h</em> which has a value of 3072.</strong> <strong>Make sure that your entire code depends on this constant (not its value) as a measure of the available free frames.</strong> If this constant has a value of 3072, then we will have the problem stated above. But, if we change the value of the constant to (say) 400, then the number of free frames initially available is only 400, i.e. your main memory looks as if it only has <code>1024 + NFRAMES = 1024 + 400 = 1424</code> frames of memory. Thus, you have ample scope to test your replacement policy by changing the NFRAMES constant.</p>
+<p>Initially, <code>NFRAMES</code> is set to 3072, so that you don’t need to consider about page replacement policy until you’ve finished everything else. In grading, we may use a small number to test page replacement policy.</p>
+<h2 id="support-data-structures">Support Data Structures</h2>
+<h4 id="finding-the-backing-store-for-a-virtual-address">Finding the Backing Store for a Virtual Address</h4>
+<p>If a process can map multiple address ranges to different backing stores, how does one determine which backing store a page needs to be read from (or written to) when it is being brought into (removed from) a frame? To handle this problem, please keep track of which backing store a process was allocated when it was created using <code>vcreate()</code> (vcreate needs to call <strong>backing store APIs</strong> to allocate a backing store for the virtual heap). Finding the offset (i.e. the particular page within the store to write/read from) can be computed using the virtual page number. You may need to declare a new kernel data structure which maps virtual address spaces to backing store descriptors. We will call this the <strong>backing store map</strong>. It is a tuple such as:</p>
+<pre><code>&lt;pid, vpage, npages, store&gt;</code></pre>
+<p>This mapping is maintained inside the kernel. Since the <em>store</em> can take only 8 values at most (because there are only 8 backing stores possible for any user), and no store can be mapped to more than one range of virtual memory at any time, the table that contains these mappings will contain only 8 entries. This table is placed in the kernel data segment (in the first 25 pages of the physical memory). You need not take any extra care about placing this table. Just create an array of 8 entries of the type of the mapping and that’s all. It is pretty similar to <code>semtab[]</code> and <code>proctab[]</code>.</p>
+<p>Also write a function that performs the following lookup:</p>
+<pre><code>f(pid, vaddr) =&gt; (store, page_offset within store)
+  </code></pre>
+<h4 id="inverted-page-table">Inverted Page Table</h4>
+<p>So far, when writing back a dirty page, the only way to determine which virtual page and process (and thus which backing store) a dirty frame belongs to, is to traverse the page tables of every process looking for a frame location that corresponds to the frame we wish to write back. This is extremely inefficient. To circumvent this, we use another kernel data structure: <em>inverted page table</em>. The inverted page table contains tuples of the form:</p>
+<pre><code>(frame_number, pid, virtual_page_number)</code></pre>
+<p>If we use an array of size <code>NFRAMES</code>, the frame number is implicit and we can just index into the array. With this additional structure, we can easily find the pid and virtual page number of the page held within any frame <em>i</em>. From that, we can easily find the backing store (using the backing store map), and compute which page within the backing store corresponds to the page in frame <em>i</em>. You may also extend to use this table to hold other information for page replacement.</p>
+<h2 id="considerations">Considerations</h2>
+<p>Please take into consideration the following when completing this assignment.</p>
+<h4 id="system-initialization">System Initialization</h4>
+<p>The NULL process is special in that it is custom created (not through <code>create()</code>) in <code>sysinit()</code>. The NULL process does not have a private heap, and neither do processes spawned by <code>create()</code>.</p>
+<p>To set up demand paging, write a function <code>initialize_paging()</code> which does the following:</p>
+<ol type="1">
+<li>Initialize all necessary data structures.</li>
+<li>Allocate and initialize a page directory for the NULL process.</li>
+<li>Create the page tables which map pages 0 through 4095 to the 16 MB physical address range. We will call these <em>global page tables</em>.</li>
+<li>Create a page table for mapping the device memory starting at <code>0x90000000</code>. You need to map 1024 pages starting at this address. This means you will need to fill page directory entry at index #576 (0x90000000 &gt;&gt; 22) and all the entries in the corresponding page table.</li>
+<li>Set the <code>PDBR</code> register (i.e., <code>CR3</code> register) to the page directory of the NULL process.</li>
+<li>Install the page fault interrupt service routine.</li>
+<li>Enable paging.</li>
+</ol>
+<p><code>initialize_paging()</code> should be called in initialize.c immediately after the call to <code>sysinit()</code>.</p>
+<blockquote>
+<p>Note: <code>PDBR</code> stands for the page directory base register, also known as <code>CR3</code>.</p>
+</blockquote>
+<h4 id="process-creation">Process Creation</h4>
+<p>When a process is created, we must also create a page directory and record the address. As noted above, the first 16 megabytes of each process will be mapped to the 16 megabytes of physical memory, and the 1024 pages starting at <code>0x90000000</code> will be mapped to the same physical memory range for memory-mapped devices. Hence this initialization is common to all processes.</p>
+<p>A separate mapping must be created for a new process’s private heap when created with <code>vcreate()</code>.</p>
+<h4 id="process-destruction">Process Destruction</h4>
+<p>When a process terminates, the following should happen:</p>
+<ol type="1">
+<li>All frames which currently hold any of its pages should be written to the backing store and be freed.</li>
+<li>All of its mappings should be removed from the backing store map.</li>
+<li>The backing stores for its heap should be released (remember backing stores allocated by a process persist unless the process explicitly releases them).</li>
+<li>Frames used for the process’s page directory and page tables should be released.</li>
+</ol>
+<h4 id="context-switching">Context Switching</h4>
+<p>As we switch context between processes, we must also switch between memory spaces. This is accomplished by updating the <code>PDBR</code> register with every context switch. This register must always point to a valid page directory that is in RAM at a page boundary.</p>
+<h3 id="hintsnotes">Hints/Notes</h3>
+<p>After reading chapters two and three in Volume 3, you should have got a basic understanding of memory management in the Intel x86 architecture. Some more remarks / reminders are as below:</p>
+<ol type="1">
+<li>XINU uses the flat memory model, i.e. physical address = linear addresses. This is achieved by “neutralizing” the addressing contribution of segmentation.</li>
+<li>The segments are set in <em>meminit.c</em> in the function <code>setsegs()</code>.</li>
+<li>Pages are 4K (4096 bytes) in size.</li>
+<li>To compute the virtual page number from a virtual address, simply grab the most significant 20 bits of a virtual address form the virtual page number. After reading the materials, the answer shall be straightforward.</li>
+<li>Some demo code is given by <a href="asm_ex.c" class="uri">asm_ex.c</a> for getting and setting the control registers, and <a href="dump32.c" class="uri">dump32.c</a> for dumping a binary number with labeled bits.</li>
+</ol>
+<h2 id="debugging">Debugging</h2>
+<p>Using <code>objdump -D</code> on the file <code>xinu.elf</code> can help you locate where your program crashed. The most difficult problem to diagnose is when the machine simply reboots itself. This is usually the result of having a bad stack pointer. In such a case, the machine cannot give a trap. It is better to test your code module-by-module, and maintain working copies (to which you can revert back) using some version control tool.</p>
+<h2 id="instrumentation-hooks">Instrumentation Hooks</h2>
+<p>You’ll need to implement this function for the instrumentation:</p>
+<pre><code>uint32 get_faults();</code></pre>
+<p>Your implementation should maintain a count of the number of times the page fault handler has been called. <code>get_faults()</code> will return this number.</p>
+<p>Besides, you’ll need to add instrumentation hooks to your page fault handler. These hooks are functions that will be called by your code to report what it is doing:</p>
+<pre><code>void hook_ptable_create(uint32 pagenum);</code></pre>
+<p>For <em>pagenum</em>, you may pass in either the frame number, or any page in this page table.</span> This hook should be called when your implementation is creating a page table.</p>
+<pre><code>void hook_ptable_delete(uint32 pagenum);</code></pre>
+<p>For <em>pagenum</em>, you may pass in either the frame number, or any page in this page table.</span> This hook should be called when your implementation is deleting a page table.</p>
+<pre><code>void hook_pfault(int16 procid, void *addr, uint32 pagenum, uint32 framenum);</code></pre>
+<p>where <em>addr</em> is the address that for which the page fault was generated, <em>pagenum</em> is the pagenumber this corresponds to, and <em>framenum</em> is the frame number which has been selected for this page. This hook should be called right before the page fault handler is about to return.</p>
+<pre><code>void hook_pswap_out(int16 procid, uint32 pagenum, uint32 framenum);</code></pre>
+<p>where <em>pagenum</em> is the number of the page being swapped out; <em>framenum</em> is the number of the frame that contains the page being swapped out, and <em>procid</em> is the process whose page is being swapped out. This hook should be called when your implementation is replacing (swapping out) a frame.</p>
+<p>The code for hooks is already provided in <em>/system/hooks.c</em>, remember to invoke them at the right moment. You might want to comment out the <code>HOOK_LOG_ON</code> macro in <em>/system/hooks.c</em> when you do not want to be disturbed by this output. Note that we will replace this file in grading, so do not let your implementation depend on this file.</p>
+<h3 id="testcases">Testcases</h3>
+<p>For the purpose of this lab, you will be provided two simple testcases. These testcases are provided in <em>/system/page_policy_test.c</em>. This file checks both the page fault handling and page replacement policy within one process created using <em>vcreate</em>. The test virtual process creates 99 pages and attempts to read and write to all of them which induces page faults.</p>
+<blockquote>
+<p>Please ensure that paging is enabled first</p>
+</blockquote>
+<p>For page fault handling, please set PAGE_REPLACEMENT to 0 and NFRAMES (include/paging.h) to a value greater than or equal to 200. Since there are enough free frames available, the page fault handler (if implemented correctly) will simply allocate these frames to the process. If the process ends gracefully, the test passes.</p>
+<p>For page replacement testing, please set PAGE_REPLACEMENT to 1, NFRAMES (include/paging.h) to a value less then or equal to 50 and POLICY_TESTING (system/hooks.c) to 1. Also, if your instrumentation hooks are not correctly placed, there is no guarantee on the accuracy of this test. For this part, since NFRAMES &lt; ALLOCATED_PAGES, there is bound to be page replacement. The hooks will panic in case the page replacement policy (FIFO) is not being followed. If the test runs till the end, with the hooks in place, your test passes.</p>
+<h2 id="bonus-problem-25-pts">Bonus Problem (25 pts)</h2>
+<p>The default page replacement policy is FIFO, in the bonus problem, you are asked to implement another GCA (<em>Global Clock Algorithm</em>) policy. The description on GCA can be found at Chapter 10.14 in textbook. Use the GCA macro as defined in <em>/include/paging.h</em>. Select your policy by calling <code>srpolicy(GCA)</code>. Note that your <code>srpolicy(GCA)</code> call should return OK if you have added the support for GCA policy. To traverse through the list of frames for testing/setting bits in GCA policy, you may just start from the frame next to where you last stopped, thus in a round-robin fashion.</p>
+<p>Also create a workload of memory intensive processes, and demonstrate that your policy improves performance comparing to FIFO. (Hint: using the hooks and monitor statistics in different cases). Discuss your results in <strong>Lab3Answers.pdf</strong> (put under <em>/system/</em>). Since we didn’t require writings for non-bonus part, if you do not plan to implement the bonus problem, you don’t need to submit <strong>Lab3Answers.pdf</strong>.</p>
+<h2 id="turn-in-instructions">Turn-in Instructions**</h2>
+<p>Electronic turn-in instructions:</p>
+<ol type="1">
+<li><p>Go to <code>xinu-x86-qemu/compile/</code> directory and do <code>make clean</code>.</p></li>
+<li><p>Go to <code>xinu-x86-qemu/rdserver/</code> directory and do <code>make clean</code>.</p></li>
+<li><p>Go to the directory of which your <code>xinu-x86-qemu</code> directory is a subdirectory. (NOTE: please do NOT rename xinu-x86-qemu, or any of its subdirectories!)</p>
+<p>e.g., if ~/cs503lab3/xinu-qemu-paging is your directory structure, go to ~/cs503lab3/ and turnin there.</p></li>
+<li><p>Type the following command:</p></li>
+</ol>
+<pre><code>turnin -c cs503 -p lab3 xinu-x86-qemu</code></pre>
+<ol start="5" type="1">
+<li>After submitting your files, you may want to check that it’s indeed submitted using command:</li>
+</ol>
+<pre><code>turnin -v -c cs503 -p lab3</code></pre>
+<p><strong>Important</strong>: Please comment your code changes in XINU such that (a) where changes are made is highlighted, and (b) what changes are made is conveyed.</p>
+<p><strong>Important</strong>: You can write code in main.c to test your procedures but please note that when we test your programs we will replace the main.c file. Therefore, do not put any functionality in the main.c file. All debugging output should be turned off before you submit your code.</p>
+</body>
+</html>
