@@ -15,6 +15,7 @@ char  	*vgetmem(
 		restore(mask);
 		return (char *)SYSERR;
 	}
+	nbytes = (uint32)roundmb(nbytes);
 	
 	prptr = &proctab[currpid];
 	curr = prptr->vmem_free_list;

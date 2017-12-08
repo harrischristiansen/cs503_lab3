@@ -29,8 +29,8 @@ December 2017
 	- [ ] syscall write_bs(char *src, bsd_t store, uint32 pagenum)
 - [ ] Instrumentation Hooks
 	- [ ] uint32 get_faults()
-- [X] Instrumentation Hooks (given)
-	- [X] void hook_ptable_create(uint32 pagenum)
-	- [X] void hook_ptable_delete(uint32 pagenum)
-	- [X] void hook_pfault(int16 procid, void *addr, uint32 pagenum, uint32 framenum)
-	- [X] void hook_pswap_out(int16 procid, uint32 pagenum, uint32 framenum)
+- [ ] Instrumentation Hook Usage
+	- [ ] void hook_ptable_create(uint32 pagenum)
+	- [ ] void hook_ptable_delete(uint32 pagenum)
+	- [ ] void hook_pfault(int16 procid, void *addr, uint32 pagenum, uint32 framenum)
+	- [ ] void hook_pswap_out(int16 procid, uint32 pagenum, uint32 framenum)

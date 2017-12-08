@@ -71,7 +71,7 @@ pid32	vcreate(
 	prptr->bsid = bsid;
 	prptr->vmem_num_pages = hsize;
 	prptr->vmem_free_list = (vmem_list_blk *)(getmem(sizeof(vmem_list_blk)));
-	prptr->vmem_free_list->mem = (char *)0;
+	prptr->vmem_free_list->mem = (char *)(BYTESPERPAGE * (FRAME0+NFRAMES) + 1);
 	prptr->vmem_free_list->memlen = BYTESPERPAGE * hsize;
 	prptr->vmem_free_list->next = NULL;
 	

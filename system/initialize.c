@@ -207,6 +207,9 @@ static	void	sysinit()
 static void initialize_paging()
 {
 	/* LAB3 TODO */
+	
+	// Setup Dispatcher for Page Fault Interrupts
+	set_evec(PAGEFAULTINTCODE, (uint32)pfdisp);
 
 	return;
 }

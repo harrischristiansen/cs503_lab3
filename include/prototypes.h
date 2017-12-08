@@ -705,7 +705,15 @@ extern	void	xdone(void);
 /* in file yield.c */
 extern	syscall	yield(void);
 
-extern 	void 	setpagedirectory(unsigned long);
+// Lab 3 Syscall Definitions
+
+/* in file pfdisp.S */
+extern	void	pfdisp(void);
+
+/* in file pfhandler.c */
+extern	interrupt	pfhandler(void);
+
+/*extern 	void 	setpagedirectory(unsigned long);
 extern 	void 	pageintdispat(void);
 extern 	int	allocateframe(void);
 extern  pd_t*	allocatepd(void);
@@ -737,7 +745,7 @@ extern int allocateframeGCA();
 extern int allocateframeFREE();
 extern int allocateframe();
 extern pd_t *allocatepd();
-extern pt_t *allocatept();
+extern pt_t *allocatept();*/
 
 /* NETWORK BYTE ORDER CONVERSION NOT NEEDED ON A BIG-ENDIAN COMPUTER */
 #define	htons(x)   ( ( 0xff & ((x)>>8) ) | ( (0xff & (x)) << 8 ) )
