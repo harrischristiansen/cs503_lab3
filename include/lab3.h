@@ -30,7 +30,8 @@ void hook_pswap_out(int16 procid, uint32 pagenum, uint32 framenum);
 // Helper for getting bit at index i in 32 bit word w
 #define GET_BIT(w,i) (!(0 == (w & (1UL << (i)))))
 
-#define	PAGEFAULTINTCODE	14			// Interrupt Code for Page Faults
+#define	NUM_GLOBALPAGETABLES	4			// Number of global page tables to create
+#define	PAGEFAULTINTERRUPTNUM	14			// Interrupt Code for Page Faults
 
 extern uint32 pferrcode;				// Page Fault Error Code (set by pfdisp)
 

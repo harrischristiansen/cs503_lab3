@@ -705,13 +705,21 @@ extern	void	xdone(void);
 /* in file yield.c */
 extern	syscall	yield(void);
 
-// Lab 3 Syscall Definitions
+// -------------------- Begin Lab 3 Prototype Modifications --------------------
 
 /* in file pfdisp.S */
 extern	void	pfdisp(void);
 
 /* in file pfhandler.c */
 extern	interrupt	pfhandler(void);
+
+/* in file paging.c */
+extern syscall init_pageDirEntry(uint32);
+extern syscall init_pageTableEntry(uint32);
+extern syscall init_globalPageTables(uint32);
+extern syscall enable_paging(void);
+extern uint32 read_cr(uint32);
+extern syscall write_cr(uint32, uint32);
 
 /*extern 	void 	setpagedirectory(unsigned long);
 extern 	void 	pageintdispat(void);

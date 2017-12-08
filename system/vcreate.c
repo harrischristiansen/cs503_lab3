@@ -69,10 +69,11 @@ pid32	vcreate(
 	
 	// Lab 3: Setup structures for vheap/demand paging
 	prptr->bsid = bsid;
+	//prptr->vmem_frame_num = ;
 	prptr->vmem_num_pages = hsize;
 	prptr->vmem_free_list = (vmem_list_blk *)(getmem(sizeof(vmem_list_blk)));
-	prptr->vmem_free_list->mem = (char *)(BYTESPERPAGE * (FRAME0+NFRAMES) + 1);
-	prptr->vmem_free_list->memlen = BYTESPERPAGE * hsize;
+	prptr->vmem_free_list->mem = (char *)(BYTESPERFRAME * (FRAME0+NFRAMES));
+	prptr->vmem_free_list->memlen = BYTESPERFRAME * hsize;
 	prptr->vmem_free_list->next = NULL;
 	
 	// End Lab 3 Modification Block
