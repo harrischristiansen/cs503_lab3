@@ -40,9 +40,12 @@ pid32	vcreate(
 		return SYSERR;
 	}
 
-	// Lab 3: Set up page directory, allocate bs etc.
-	
-	
+	// TODO: Lab 3: Set up page directory, allocate bs etc.
+	bsd_t bsid = allocate_bs(hsize); // Allocate BS for process
+	if (bsid == SYSERR || open_bs(bsid) == SYSERR) { // Open BS until end of process
+		restore(mask);
+		return SYSERR;
+	}
 
 	prcount++;
 	prptr = &proctab[pid];
@@ -65,8 +68,14 @@ pid32	vcreate(
 	prptr->prdesc[2] = CONSOLE;
 	
 	// Lab 3: Setup structures for vheap/demand paging
-	//prptr->vmem_free_list.mem = 
-	//prptr->vmem_free_list.memlen = 
+	prptr->bsid = bsid;
+	prptr->vmem_num_pages = hsize;
+	prptr->vmem_free_list = (vmem_list_blk *)(getmem(sizeof(vmem_list_blk)));
+	prptr->vmem_free_list->mem = (char *)0;
+	prptr->vmem_free_list->memlen = BYTESPERPAGE * hsize;
+	prptr->vmem_free_list->next = NULL;
+	
+	// End Lab 3 Modification Block
 
 	/* Initialize stack as if the process was called		*/
 

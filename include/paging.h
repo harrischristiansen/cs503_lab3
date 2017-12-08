@@ -38,8 +38,9 @@ typedef struct {
 #define PAGEDIRSIZE	1024
 #define PAGETABSIZE	1024
 
-#define NBPG		4096	/* number of bytes per page	*/
-#define FRAME0		1024	/* zero-th frame		*/
+#define NBPG			4096	/* number of bytes per page	*/
+#define BYTESPERPAGE	4096	/* number of bytes per page	*/
+#define FRAME0			1024	/* zero-th frame		*/
 
 #ifndef NFRAMES
 #define NFRAMES		3072	/* number of frames		*/

@@ -75,6 +75,8 @@ struct procent {			/* Entry in the process table		*/
 
 	/* Lab 3: Structures for vheap/demand paging */
 	
+	bsd_t			bsid;					/* Descriptor ID of Backingstore */
+	uint32			vmem_num_pages;			/* Number of Pages in Virtual Memory Heap */
 	vmem_list_blk	*vmem_free_list;		/* List of free vmem in heap */
 	
 };

@@ -31,7 +31,12 @@ syscall	kill(
 		close(prptr->prdesc[i]);
 	}
 
-  // Lab3 TODO. Free frames as a process gets killed.
+	// TODO: Lab 3: Free Frames and Close BS
+	
+	close_bs(prptr->bsid);
+	deallocate_bs(prptr->bsid);
+	
+	// End Lab 3 Modification Block
 
 	freestk(prptr->prstkbase, prptr->prstklen);
 
