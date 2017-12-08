@@ -729,9 +729,9 @@ extern	pt_t*	allocatept(void);
 extern	void	iptableinit(void);
 extern	void	bsmapinit(void);
 extern	void	globalpagetablesinit(void);
-extern	void	printprdir(char* addr);
+extern	void	printprdir(char* addr);*/
 extern	int	count_bs(void);
-extern 	void	insert_bsmap(pid32 procid, uint32 vpage, int32 npages, bsd_t bs);
+/*extern 	void	insert_bsmap(pid32 procid, uint32 vpage, int32 npages, bsd_t bs);
 extern	int	remove_bsmap(pid32 procid);
 extern	int	retrieve_bsmap(pid32 procid, uint32 vpage, int*); 
 extern	void	printbsmap(void);

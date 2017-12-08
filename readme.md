@@ -20,6 +20,7 @@ December 2017
 	- [ ] initialize.c modifications
 	- [ ] resched.c modifications
 	- [ ] kill.c modifications
+	- [ ] create.c modifications
 - [ ] Backing Store Usage
 	- [X] bsd_t allocate_bs(uint32 npages)
 	- [X] bsd_t deallocate_bs(bsd_t store)
@@ -29,6 +30,9 @@ December 2017
 	- [ ] syscall write_bs(char *src, bsd_t store, uint32 pagenum)
 - [ ] Instrumentation Hooks
 	- [ ] uint32 get_faults()
+- [ ] Support Data Structures
+	- [ ] Backing Store Map
+	- [ ] Inverted Page Table
 - [ ] Instrumentation Hook Usage
 	- [ ] void hook_ptable_create(uint32 pagenum)
 	- [ ] void hook_ptable_delete(uint32 pagenum)

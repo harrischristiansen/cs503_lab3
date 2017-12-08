@@ -16,7 +16,7 @@ typedef struct {
 	unsigned int pd_fmb	: 1;		/* four MB pages?		*/
 	unsigned int pd_global: 1;		/* global (ignored)		*/
 	unsigned int pd_avail : 3;		/* for programmer's use		*/
-	unsigned int pd_base	: 20;		/* location of page table?	*/
+	unsigned int pd_base	: 20;		/* location of page table	*/
 } pd_t;
 
 /* Structure for a page table entry */
@@ -32,7 +32,7 @@ typedef struct {
 	unsigned int pt_mbz	: 1;		/* must be zero			*/
 	unsigned int pt_global: 1;		/* should be zero in 586	*/
 	unsigned int pt_avail : 3;		/* for programmer's use		*/
-	unsigned int pt_base	: 20;		/* location of page?		*/
+	unsigned int pt_base	: 20;		/* location of page		*/
 } pt_t;
 
 #define PAGEDIRSIZE	1024
