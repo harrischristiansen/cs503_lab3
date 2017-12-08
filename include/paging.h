@@ -41,6 +41,7 @@ typedef struct {
 #define NBPG			4096	/* number of bytes per page */
 #define BYTESPERFRAME	NBPG	/* number of bytes per frame */
 #define FRAME0			1024	/* zero-th frame		*/
+#define FRAME_END		4096	/* end of frame space		*/
 
 #ifndef NFRAMES
 #define NFRAMES		3072	/* number of frames		*/

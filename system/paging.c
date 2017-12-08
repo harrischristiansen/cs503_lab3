@@ -8,7 +8,7 @@ syscall init_pageDirEntry(uint32 frameNum)
 {
 	intmask mask;			// Interrupt mask
 	
-	if (frameNum < FRAME0 || frameNum > (FRAME0+NFRAMES)) { // Can only create pte between frames 1024-4096
+	if (frameNum < FRAME0 || frameNum >= FRAME_END) { // Can only create pte between frames 1024-4096
 		return SYSERR;
 	}
 	
@@ -33,7 +33,7 @@ syscall init_pageTableEntry(uint32 frameNum)
 {
 	intmask mask;			// Interrupt mask
 	
-	if (frameNum < FRAME0 || frameNum > (FRAME0+NFRAMES)) { // Can only create pte between frames 1024-4096
+	if (frameNum < FRAME0 || frameNum >= FRAME_END) { // Can only create pte between frames 1024-4096
 		return SYSERR;
 	}
 	
@@ -72,8 +72,8 @@ syscall init_globalPageTables(uint32 numFrames)
 syscall enable_paging()
 {
 	uint32 cr0_val =  read_cr(0);
-	cr0_val = cr0_val | ( 0x1 << 31 ) | 0x1;
-	write_cr(9, cr0_val);
+	cr0_val = cr0_val | 0x80000000;
+	write_cr(0, cr0_val);
 	return OK;
 }
 

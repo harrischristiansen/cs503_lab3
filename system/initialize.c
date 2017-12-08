@@ -212,8 +212,8 @@ static void initialize_paging()
 	// 1. Initialize all necessary data structures
 	
 	// 2. Allocate and initialize a page directory for the NULL process
-	//nullprptr->vmem_frame_num = ;
-	init_pageDirEntry(nullprptr->vmem_frame_num);
+	//nullprptr->pageDir_frameNum = ;
+	init_pageDirEntry(nullprptr->pageDir_frameNum);
 	
 	// 3. Create 4 Global Page Tables (map pages 0 through 4095 to the 16 MB physical address range)
 	init_globalPageTables(NUM_GLOBALPAGETABLES);
@@ -221,7 +221,7 @@ static void initialize_paging()
 	// 4. Create Device Page Table (1024 pages) // Create a page table for mapping the device memory starting at 0x90000000. You need to map 1024 pages starting at this address. This means you will need to fill page directory entry at index #576 (0x90000000 >> 22) and all the entries in the corresponding page table.
 	
 	// 5. Set the PDBR(CR3) register to the page directory of the NULL process
-	write_cr(3, (((nullprptr->vmem_frame_num * BYTESPERFRAME) >> 12) << 12));
+	write_cr(3, (((nullprptr->pageDir_frameNum * BYTESPERFRAME) >> 12) << 12));
 	
 	// 6. Setup Dispatcher for Page Fault Interrupts
 	set_evec(PAGEFAULTINTERRUPTNUM, (uint32)pfdisp);
