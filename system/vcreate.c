@@ -14,7 +14,7 @@ local	int newpid();
 pid32	vcreate(
 	  void		*funcaddr,	/* Address of the function	*/
 	  uint32	ssize,		/* Stack size in words		*/
-		uint32	hsize,		/* Heap size in num of pages */
+	  uint32	hsize,		/* Heap size in num of pages */
 	  pri16		priority,	/* Process priority > 0		*/
 	  char		*name,		/* Name (for debugging)		*/
 	  uint32	nargs,		/* Number of args that follow	*/
@@ -22,12 +22,12 @@ pid32	vcreate(
 	)
 {
 	uint32		savsp, *pushsp;
-	intmask 	mask;    	/* Interrupt mask		*/
-	pid32		pid;		/* Stores new process id	*/
+	intmask 	mask;    		/* Interrupt mask		*/
+	pid32		pid;			/* Stores new process id	*/
 	struct	procent	*prptr;		/* Pointer to proc. table entry */
 	int32		i;
-	uint32		*a;		/* Points to list of args	*/
-	uint32		*saddr;		/* Stack address		*/
+	uint32		*a;				/* Points to list of args	*/
+	uint32		*saddr;			/* Stack address		*/
 
 	mask = disable();
 	if (ssize < MINSTK)
@@ -40,7 +40,9 @@ pid32	vcreate(
 		return SYSERR;
 	}
 
-  // Lab3 TODO. set up page directory, allocate bs etc.
+	// Lab 3: Set up page directory, allocate bs etc.
+	
+	
 
 	prcount++;
 	prptr = &proctab[pid];
@@ -61,6 +63,10 @@ pid32	vcreate(
 	prptr->prdesc[0] = CONSOLE;
 	prptr->prdesc[1] = CONSOLE;
 	prptr->prdesc[2] = CONSOLE;
+	
+	// Lab 3: Setup structures for vheap/demand paging
+	//prptr->vmem_free_list.mem = 
+	//prptr->vmem_free_list.memlen = 
 
 	/* Initialize stack as if the process was called		*/
 

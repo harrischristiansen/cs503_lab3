@@ -14,7 +14,7 @@ December 2017
 ## Tasks
 - [ ] Demand Paging Services
 	- [ ] pid32 vcreate(void *funcaddr, uint32 ssize, uint32 hsize, pri16 priority, char *name, uint32 nargs, ...)
-	- [ ] char* vgetmem(uint32 nbytes)
+	- [X] char* vgetmem(uint32 nbytes)
 	- [ ] syscall vfreemem(char *blkaddr, uint32 nbytes)
 	- [ ] syscall srpolicy(int policy)
 - [ ] Backing Store

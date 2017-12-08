@@ -59,7 +59,7 @@ void	nulluser()
 
 	sysinit();
 
-  // Lab3
+	// Lab3
 	initialize_paging();
 
 	kprintf("\n\r%s\n\n\r", VERSION);

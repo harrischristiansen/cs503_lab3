@@ -44,25 +44,39 @@
 struct	memblk	{			/* See roundmb & truncmb	*/
 	struct	memblk	*mnext;		/* Ptr to next free memory blk	*/
 	uint32	mlength;		/* Size of blk (includes memblk)*/
-	};
+};
+
+// Start Lab 3 Modifications
+
+typedef struct _vmem_list_blk { // Free Virtual Memory List Struct Definition
+	struct _vmem_list_blk *next;
+	char *mem;
+	int memlen;
+} vmem_list_blk;
+
+// End Lab 3 Modifications
+
 #endif
 
 /* Definition of the process table (multiple of 32 bits) */
 
-struct procent {		/* Entry in the process table		*/
-	uint16	prstate;	/* Process state: PR_CURR, etc.		*/
-	pri16	prprio;		/* Process priority			*/
-	char	*prstkptr;	/* Saved stack pointer			*/
-	char	*prstkbase;	/* Base of run time stack		*/
-	uint32	prstklen;	/* Stack length in bytes		*/
+struct procent {			/* Entry in the process table		*/
+	uint16	prstate;		/* Process state: PR_CURR, etc.		*/
+	pri16	prprio;			/* Process priority			*/
+	char	*prstkptr;		/* Saved stack pointer			*/
+	char	*prstkbase;		/* Base of run time stack		*/
+	uint32	prstklen;		/* Stack length in bytes		*/
 	char	prname[PNMLEN];	/* Process name				*/
-	uint32	prsem;		/* Semaphore on which process waits	*/
-	pid32	prparent;	/* ID of the creating process		*/
-	umsg32	prmsg;		/* Message sent to this process		*/
-	bool8	prhasmsg;	/* Nonzero iff msg is valid		*/
+	uint32	prsem;			/* Semaphore on which process waits	*/
+	pid32	prparent;		/* ID of the creating process		*/
+	umsg32	prmsg;			/* Message sent to this process		*/
+	bool8	prhasmsg;		/* Nonzero iff msg is valid		*/
 	int16	prdesc[NDESC];	/* Device descriptors for process	*/
 
-  /* Lab3 TODO: add more structures as required for vheap etc. */
+	/* Lab 3: Structures for vheap/demand paging */
+	
+	vmem_list_blk	*vmem_free_list;		/* List of free vmem in heap */
+	
 };
 
 /* Marker for the top of a process stack (used to help detect overflow)	*/

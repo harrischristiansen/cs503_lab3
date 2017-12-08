@@ -24,6 +24,8 @@ void hook_pfault(int16 procid, void *addr, uint32 pagenum, uint32 framenum);
 // changed by adil
 void hook_pswap_out(int16 procid, uint32 pagenum, uint32 framenum);
 
-/* Add more definitions here if necessary */
+/* Lab 3 Definitions */
+
+
 
 #endif // __LAB4_H_

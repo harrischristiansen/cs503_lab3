@@ -23,7 +23,8 @@
 struct	memblk	{			/* See roundmb & truncmb	*/
 	struct	memblk	*mnext;		/* Ptr to next free memory blk	*/
 	uint32	mlength;		/* Size of blk (includes memblk)*/
-	};
+};
+
 #endif
 
 extern	struct	memblk	memlist;	/* Head of free memory list	*/
