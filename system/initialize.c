@@ -211,10 +211,11 @@ static void initialize_paging()
 	struct	procent	*nullprptr = &proctab[NULLPROC];
 	
 	// 1. Initialize all necessary data structures
-	// TODO: Initialize inverted page table, etc?
+	// TODO: Initialize inverted page table
 	
 	// 2. Allocate and initialize a page directory for the NULL process, with entries already present for the global and device page tables
 	nullprptr->pageDir_frameNum = 0; // TODO
+	nullprptr->pageDir = ((nullprptr->pageDir_frameNum * BYTESPERFRAME) >> 12) << 12;
 	init_pageDirEntry(nullprptr->pageDir_frameNum);
 	
 	// 3. Create 4 Global Page Tables (map pages 0 through 4095 to the 16 MB physical address range)
@@ -224,7 +225,7 @@ static void initialize_paging()
 	init_pageTableEntry(0x90000000 / BYTESPERFRAME);
 	
 	// 5. Set the PDBR(CR3) register to the page directory of the NULL process
-	write_cr(3, (((nullprptr->pageDir_frameNum * BYTESPERFRAME) >> 12) << 12));
+	write_cr(3, nullprptr->pageDir);
 	
 	// 6. Setup Dispatcher for Page Fault Interrupts
 	set_evec(PAGEFAULTINTERRUPTNUM, (uint32)pfdisp);

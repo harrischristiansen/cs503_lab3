@@ -34,6 +34,9 @@ syscall psinit ()
 		bstab[i].isopen = FALSE;
 		bstab[i].isallocated = FALSE;
 		bstab[i].usecount = 0;
+		
+		bstab[i].pid = -1;
+		bstab[i].pageNum = 0;
 		bstab[i].npages = 0;
 	}
 

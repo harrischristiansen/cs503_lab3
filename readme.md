@@ -18,9 +18,9 @@ December 2017
 	- [ ] syscall vfreemem(char *blkaddr, uint32 nbytes)
 	- [ ] syscall srpolicy(int policy)
 	- [ ] initialize.c modifications
-	- [ ] resched.c modifications
+	- [X] resched.c modifications
 	- [ ] kill.c modifications
-	- [ ] create.c modifications
+	- [ ] create.c modifications for creating page directory
 - [ ] Backing Store Usage
 	- [X] bsd_t allocate_bs(uint32 npages)
 	- [X] bsd_t deallocate_bs(bsd_t store)

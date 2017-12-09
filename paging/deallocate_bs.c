@@ -41,7 +41,7 @@ bsd_t	deallocate_bs (
 	
 	// Begin Lab 3 Modifications
 	
-	bstab[store].pid = 0;
+	bstab[store].pid = -1;
 	bstab[store].pageNum = 0;
 	bstab[store].npages = 0;
 	

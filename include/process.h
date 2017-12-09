@@ -76,6 +76,7 @@ struct procent {			/* Entry in the process table		*/
 	/* Lab 3: Structures for vheap/demand paging */
 	
 	bsd_t			bsid;					// Descriptor ID of backingstore
+	uint32			pageDir;				// Address for process page directory
 	uint32			pageDir_frameNum;		// Frame number for process page directory
 	uint32			vPageNum;				// First page number of virtual memory heap
 	uint32			vNumPages;				// Number of pages in virtual memory heap

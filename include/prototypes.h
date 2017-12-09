@@ -725,19 +725,11 @@ extern syscall write_cr(uint32, uint32);
 extern syscall getStoreForVAddress(pid32, char *, bsd_t *, uint32 *);
 
 /*extern 	void 	setpagedirectory(unsigned long);
-extern 	void 	pageintdispat(void);
 extern 	int	allocateframe(void);
 extern  pd_t*	allocatepd(void);
 extern	pt_t*	allocatept(void);
 extern	void	iptableinit(void);
-extern	void	bsmapinit(void);
-extern	void	globalpagetablesinit(void);
-extern	void	printprdir(char* addr);*/
-extern	int	count_bs(void);
-/*extern 	void	insert_bsmap(pid32 procid, uint32 vpage, int32 npages, bsd_t bs);
-extern	int	remove_bsmap(pid32 procid);
-extern	int	retrieve_bsmap(pid32 procid, uint32 vpage, int*); 
-extern	void	printbsmap(void);
+extern	void	printprdir(char* addr);
 extern	unsigned long read_faultaddr(void);
 
 extern void freept(pt_t* frameaddr);
@@ -754,9 +746,8 @@ extern int updatefrnextFIFO(int32 framenum);
 extern int allocateframeFIFO();
 extern int allocateframeGCA();
 extern int allocateframeFREE();
-extern int allocateframe();
-extern pd_t *allocatepd();
-extern pt_t *allocatept();*/
+extern int allocateframe();*/
+extern	int	count_bs(void);
 
 /* NETWORK BYTE ORDER CONVERSION NOT NEEDED ON A BIG-ENDIAN COMPUTER */
 #define	htons(x)   ( ( 0xff & ((x)>>8) ) | ( (0xff & (x)) << 8 ) )

@@ -40,7 +40,7 @@ pid32	vcreate(
 		return SYSERR;
 	}
 
-	// Begin Lab 3 Modification Block (TODO Note: Also setup page directory in create?)
+	// Begin Lab 3 Modification Block
 	
 	// Setup page directory
 	uint32 pageDirFrameNum = 0; // TODO
@@ -81,7 +81,8 @@ pid32	vcreate(
 	// Lab 3: Setup structures for vheap/demand paging
 	prptr->bsid = bsid;
 	prptr->pageDir_frameNum = pageDirFrameNum;
-	prptr->vPageNum = 0; // TODO
+	prptr->pageDir = ((prptr->pageDir_frameNum * BYTESPERFRAME) >> 12) << 12;
+	prptr->vPageNum = FRAME_END; // TODO
 	prptr->vNumPages = hsize;
 	prptr->vFreeList = (vmem_list_blk *)(getmem(sizeof(vmem_list_blk)));
 	prptr->vFreeList->mem = (char *)(BYTESPERFRAME * FRAME_END);

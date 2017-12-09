@@ -43,8 +43,7 @@ void	resched(void)		/* Assumes interrupts are disabled	*/
 	ptnew->prstate = PR_CURR;
 	preempt = QUANTUM;		/* Reset time slice for process	*/
 
-  // Lab3. TODO: change the page directories as a process is ctx out
-
+	write_cr(3, ptnew->pageDir); // Lab 3: Change the page direcotry as the process is ctx out
 	ctxsw(&ptold->prstkptr, &ptnew->prstkptr);
 
 	/* Old process returns here when resumed */

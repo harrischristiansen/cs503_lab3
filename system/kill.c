@@ -31,10 +31,15 @@ syscall	kill(
 		close(prptr->prdesc[i]);
 	}
 
-	// TODO: Lab 3: Free Frames and Close BS
+	// Begin Lab 3 Modifications
 	
+	// Close backingstore
 	close_bs(prptr->bsid);
 	deallocate_bs(prptr->bsid);
+	
+	// TODO: Free Frames
+	
+	// TODO: Remove from inverted page table?
 	
 	// End Lab 3 Modification Block
 

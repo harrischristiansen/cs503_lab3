@@ -39,6 +39,17 @@ pid32	create(
 		restore(mask);
 		return SYSERR;
 	}
+	
+	// Begin Lab 3 Modification Block
+	
+	// Setup page directory
+	uint32 pageDirFrameNum = 0; // TODO
+	if (init_pageDirEntry(pageDirFrameNum) == SYSERR) {
+		restore(mask);
+		return SYSERR;
+	}
+	
+	// End Lab 3 Modification Block
 
 	prcount++;
 	prptr = &proctab[pid];
@@ -59,6 +70,10 @@ pid32	create(
 	prptr->prdesc[0] = WCONSOLE;
 	prptr->prdesc[1] = WCONSOLE;
 	prptr->prdesc[2] = WCONSOLE;
+	
+	// Lab 3: Set Page Directory
+	prptr->pageDir_frameNum = pageDirFrameNum;
+	prptr->pageDir = ((prptr->pageDir_frameNum * BYTESPERFRAME) >> 12) << 12;
 
 	/* Initialize stack as if the process was called		*/
 
