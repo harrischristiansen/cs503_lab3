@@ -77,8 +77,9 @@ struct procent {			/* Entry in the process table		*/
 	
 	bsd_t			bsid;					// Descriptor ID of backingstore
 	uint32			pageDir_frameNum;		// Frame number for process page directory
-	uint32			vmem_num_pages;			// Number of Pages in Virtual Memory Heap
-	vmem_list_blk	*vmem_free_list;		// List of free vmem in heap
+	uint32			vPageNum;				// First page number of virtual memory heap
+	uint32			vNumPages;				// Number of pages in virtual memory heap
+	vmem_list_blk	*vFreeList;				// List of free memory in heap
 	
 };
 

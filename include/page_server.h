@@ -23,6 +23,13 @@ struct bs_entry{
 	byte	isallocated;
 	int32	usecount;
 	unsigned int npages;
+	
+	// Begin Lab 3 Modifications
+	
+	pid32	pid;				// PID of mapping
+	uint32	pageNum;			// First virtual page number
+	
+	// End Lab 3 Modifications
 };
 
 #define PAGE_SERVER_ACTIVE      1

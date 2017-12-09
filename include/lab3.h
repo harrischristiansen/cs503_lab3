@@ -7,11 +7,11 @@
 #include <paging.h>
 
 typedef struct {
-  int16 alloc_page_proc[NFRAMES];
-  uint32 alloc_page[NFRAMES];
-  int16 curframe;
-  int16 reclaimframe;
-} frame_md_t;
+	int16 alloc_page_proc[NFRAMES];
+	uint32 alloc_page[NFRAMES];
+	int16 curframe;
+	int16 reclaimframe;
+	} frame_md_t;
 
 extern frame_md_t frame_md;
 
@@ -25,13 +25,14 @@ void hook_pfault(int16 procid, void *addr, uint32 pagenum, uint32 framenum);
 // changed by adil
 void hook_pswap_out(int16 procid, uint32 pagenum, uint32 framenum);
 
-/* Lab 3 Definitions */
+/* Begin Lab 3 Modifications */
 
 // Helper for getting bit at index i in 32 bit word w
 #define GET_BIT(w,i) (!(0 == (w & (1UL << (i)))))
 
 #define	NUM_GLOBALPAGETABLES	4			// Number of global page tables to create
-#define	PAGEFAULTINTERRUPTNUM	14			// Interrupt Code for Page Faults
+#define	PAGEFAULTINTERRUPTNUM	14			// Interrupt code for page faults
+#define	PAGEDIR_DEVICEENTRY		576			// Device entry index in page directory (entry 576: 0x90000000 >> 22)
 
 extern uint32 pferrcode;				// Page Fault Error Code (set by pfdisp)
 

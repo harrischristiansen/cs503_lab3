@@ -19,7 +19,7 @@ syscall	vfreemem(
 	}
 	
 	prptr = &proctab[currpid];
-	curr = prptr->vmem_free_list;
+	curr = prptr->vFreeList;
 	
 	while (curr->next != NULL && curr->memlen != 0) { // Find location in free list to insert
 		curr = curr->next;

@@ -721,6 +721,9 @@ extern syscall enable_paging(void);
 extern uint32 read_cr(uint32);
 extern syscall write_cr(uint32, uint32);
 
+/* in file bsmap.c */
+extern syscall getStoreForVAddress(pid32, char *, bsd_t *, uint32 *);
+
 /*extern 	void 	setpagedirectory(unsigned long);
 extern 	void 	pageintdispat(void);
 extern 	int	allocateframe(void);

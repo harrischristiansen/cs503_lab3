@@ -38,6 +38,14 @@ bsd_t	deallocate_bs (
 
 	bstab[store].isallocated = FALSE;
 	bstab[store].usecount = 0;
+	
+	// Begin Lab 3 Modifications
+	
+	bstab[store].pid = 0;
+	bstab[store].pageNum = 0;
+	bstab[store].npages = 0;
+	
+	// End Lab 3 Modifications
 
 	restore(mask);
 	return store;

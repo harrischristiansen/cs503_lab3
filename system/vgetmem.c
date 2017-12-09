@@ -18,7 +18,7 @@ char  	*vgetmem(
 	nbytes = (uint32)roundmb(nbytes);
 	
 	prptr = &proctab[currpid];
-	curr = prptr->vmem_free_list;
+	curr = prptr->vFreeList;
 	while (curr != NULL) {
 		if (curr->memlen == nbytes) { // Free block is exact size needed
 			curr->memlen = 0;

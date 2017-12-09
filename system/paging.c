@@ -23,6 +23,11 @@ syscall init_pageDirEntry(uint32 frameNum)
 		pde[i].pd_base = ((FRAME0 + i) * BYTESPERFRAME) >> 12;
 	}
 	
+	// Load address of device page table
+	pde[PAGEDIR_DEVICEENTRY].pd_pres = 1;
+	pde[PAGEDIR_DEVICEENTRY].pd_write = 1;
+	pde[PAGEDIR_DEVICEENTRY].pd_base = 0;
+	
 	restore(mask);
 	return OK;
 }

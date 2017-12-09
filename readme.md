@@ -4,7 +4,7 @@
 December 2017  
 
 ## Description
-- The objective of this lab is to build Virtual Memory and Demand Paging for the XINU operating system.
+- The objective of this lab is to implement Virtual Memory and Demand Paging for the XINU operating system.
 
 ## Usage
 - Build: `make` in compile/ directory
@@ -28,11 +28,13 @@ December 2017
 	- [X] bsd_t close_bs(bsd_t store)
 	- [ ] syscall read_bs(char *dst, bsd_t store, uint32 pagenum)
 	- [ ] syscall write_bs(char *src, bsd_t store, uint32 pagenum)
-- [ ] Instrumentation Hooks
-	- [ ] uint32 get_faults()
 - [ ] Support Data Structures
 	- [ ] Backing Store Map
+		- [ ] Maintain record of bsd_t -> (pid, pageNum, npages)
+		- [X] syscall getStoreForVAddress(pid32 pid, char* vaddr, bsd_t* bsid, uint32 poffset)
 	- [ ] Inverted Page Table
+- [ ] Instrumentation Hooks
+	- [ ] uint32 get_faults()
 - [ ] Instrumentation Hook Usage
 	- [ ] void hook_ptable_create(uint32 pagenum)
 	- [ ] void hook_ptable_delete(uint32 pagenum)

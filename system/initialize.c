@@ -204,21 +204,24 @@ static	void	sysinit()
 	return;
 }
 
+// Begin Lab 3 Modifications
+
 static void initialize_paging()
 {
 	struct	procent	*nullprptr = &proctab[NULLPROC];
-	/* LAB3 TODO */
 	
 	// 1. Initialize all necessary data structures
+	// TODO: Initialize inverted page table, etc?
 	
-	// 2. Allocate and initialize a page directory for the NULL process
-	//nullprptr->pageDir_frameNum = ;
+	// 2. Allocate and initialize a page directory for the NULL process, with entries already present for the global and device page tables
+	nullprptr->pageDir_frameNum = 0; // TODO
 	init_pageDirEntry(nullprptr->pageDir_frameNum);
 	
 	// 3. Create 4 Global Page Tables (map pages 0 through 4095 to the 16 MB physical address range)
 	init_globalPageTables(NUM_GLOBALPAGETABLES);
 	
 	// 4. Create Device Page Table (1024 pages) // Create a page table for mapping the device memory starting at 0x90000000. You need to map 1024 pages starting at this address. This means you will need to fill page directory entry at index #576 (0x90000000 >> 22) and all the entries in the corresponding page table.
+	init_pageTableEntry(0x90000000 / BYTESPERFRAME);
 	
 	// 5. Set the PDBR(CR3) register to the page directory of the NULL process
 	write_cr(3, (((nullprptr->pageDir_frameNum * BYTESPERFRAME) >> 12) << 12));
@@ -231,6 +234,8 @@ static void initialize_paging()
 
 	return;
 }
+
+// End Lab 3 Modifications
 
 int32	stop(char *s)
 {

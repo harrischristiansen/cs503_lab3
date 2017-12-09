@@ -40,12 +40,23 @@ pid32	vcreate(
 		return SYSERR;
 	}
 
-	// TODO: Lab 3: Set up page directory, allocate bs, etc. (Note: Also do for create?)
-	bsd_t bsid = allocate_bs(hsize); // Allocate BS for process
+	// Begin Lab 3 Modification Block (TODO Note: Also setup page directory in create?)
+	
+	// Setup page directory
+	uint32 pageDirFrameNum = 0; // TODO
+	if (init_pageDirEntry(pageDirFrameNum) == SYSERR) {
+		restore(mask);
+		return SYSERR;
+	}
+	
+	// Allocate an available backingstore
+	bsd_t bsid = allocate_bs(hsize);
 	if (bsid == SYSERR || open_bs(bsid) == SYSERR) { // Open BS until end of process
 		restore(mask);
 		return SYSERR;
 	}
+	
+	// End Lab 3 Modification Block
 
 	prcount++;
 	prptr = &proctab[pid];
@@ -69,12 +80,13 @@ pid32	vcreate(
 	
 	// Lab 3: Setup structures for vheap/demand paging
 	prptr->bsid = bsid;
-	//prptr->pageDir_frameNum = ;
-	prptr->vmem_num_pages = hsize;
-	prptr->vmem_free_list = (vmem_list_blk *)(getmem(sizeof(vmem_list_blk)));
-	prptr->vmem_free_list->mem = (char *)(BYTESPERFRAME * FRAME_END);
-	prptr->vmem_free_list->memlen = BYTESPERFRAME * hsize;
-	prptr->vmem_free_list->next = NULL;
+	prptr->pageDir_frameNum = pageDirFrameNum;
+	prptr->vPageNum = 0; // TODO
+	prptr->vNumPages = hsize;
+	prptr->vFreeList = (vmem_list_blk *)(getmem(sizeof(vmem_list_blk)));
+	prptr->vFreeList->mem = (char *)(BYTESPERFRAME * FRAME_END);
+	prptr->vFreeList->memlen = BYTESPERFRAME * hsize;
+	prptr->vFreeList->next = NULL;
 	
 	// End Lab 3 Modification Block
 
